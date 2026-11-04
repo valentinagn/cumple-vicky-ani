@@ -107,9 +107,11 @@
     }
     .rule-line { flex: 1; height: 1.5px; background: var(--black); }
     .rule-stars {
-      font-size: 0.6rem;
-      color: var(--pink);
-      letter-spacing: 0.3em;
+      font-size: clamp(0.55rem, 0.9vw, 0.72rem);
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--soft);
       white-space: nowrap;
     }
 
@@ -271,7 +273,7 @@
     <!-- Rule -->
     <div class="rule">
       <div class="rule-line"></div>
-      <span class="rule-stars">★ ★ ★</span>
+      <span class="rule-stars">Un año más festejando juntas</span>
       <div class="rule-line"></div>
     </div>
 
