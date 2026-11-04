@@ -79,24 +79,20 @@
     /* ── NAMES ── */
     .names {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(5rem, 14vw, 12rem);
+      font-size: clamp(4rem, 11vw, 9rem);
       line-height: 0.86;
-      color: var(--black);
       letter-spacing: 0.02em;
       margin-bottom: clamp(16px, 2.5vh, 28px);
-    }
-    .names .row-2 {
       display: flex;
       align-items: baseline;
-      gap: 0.15em;
+      gap: 0.1em;
     }
+    .names .name-vicky { color: var(--pink-dark); }
     .names .amp {
-      color: var(--green);
+      color: var(--black);
       font-size: 0.78em;
     }
-    .names .name-2 {
-      color: var(--pink-dark);
-    }
+    .names .name-ani { color: var(--green-dark); }
 
     /* ── RULE ── */
     .rule {
@@ -262,12 +258,11 @@
       <span class="badge-stars">★ ★ ★</span>
     </div>
 
-    <!-- Names — same size -->
+    <!-- Names — una línea, Vicky rosa, Ani verde -->
     <div class="names">
-      <div>VICKY</div>
-      <div class="row-2">
-        <span class="amp">&</span><span class="name-2">ANI</span>
-      </div>
+      <span class="name-vicky">VICKY</span>
+      <span class="amp">&</span>
+      <span class="name-ani">ANI</span>
     </div>
 
     <!-- Rule -->
