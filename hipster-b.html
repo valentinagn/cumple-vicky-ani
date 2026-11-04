@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Save the Date · Vicky & Ani</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Outfit:wght@200;300;400;500&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:      #5EAD56;
+      --green-dark: #2E7027;
+      --green-bg:   #D0EAC8;
+      --pink:       #EE8896;
+      --pink-dark:  #B8435A;
+      --cream:      #FDFAF5;
+      --warm:       #F2EBE0;
+      --black:      #19100A;
+      --soft:       #8C7D72;
+    }
+
+    body {
+      background: var(--warm);
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 8vw;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .poster {
+      width: 100%;
+      max-width: 900px;
+      animation: rise 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── HEADER ── */
+    .header {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: clamp(32px, 5vh, 60px);
+    }
+    .h-tag {
+      font-size: clamp(0.58rem, 0.9vw, 0.72rem);
+      font-weight: 500;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--soft);
+      white-space: nowrap;
+    }
+    .h-line { height: 1px; background: #CDC4B8; }
+    .h-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--pink);
+      flex-shrink: 0;
+    }
+
+    /* ── NAMES — full width, mixed weight ── */
+    .names {
+      margin-bottom: clamp(18px, 2.5vh, 32px);
+      display: flex;
+      align-items: baseline;
+      gap: clamp(12px, 2vw, 28px);
+      flex-wrap: wrap;
+    }
+    .name {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: clamp(5rem, 14vw, 12rem);
+      line-height: 0.85;
+      color: var(--black);
+      letter-spacing: -0.02em;
+    }
+    .amp-sep {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(2.5rem, 6vw, 5.5rem);
+      color: var(--green-dark);
+      line-height: 1;
+    }
+    .name.second { color: var(--pink-dark); }
+
+    /* ── SUBTITLE ── */
+    .subtitle {
+      font-size: clamp(0.62rem, 1vw, 0.78rem);
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--soft);
+      margin-bottom: clamp(24px, 3.5vh, 44px);
+    }
+
+    /* ── MAIN AREA — two zones ── */
+    .main-area {
+      display: grid;
+      grid-template-columns: 5fr 4fr;
+      gap: clamp(24px, 5vw, 70px);
+      margin-bottom: clamp(24px, 3.5vh, 44px);
+      align-items: end;
+    }
+
+    /* left: poem */
+    .poem-zone {}
+    .poem-pre {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(0.82rem, 1.4vw, 1.15rem);
+      color: var(--soft);
+      line-height: 2;
+      margin-bottom: clamp(20px, 2.5vh, 32px);
+    }
+
+    /* right: date */
+    .date-zone {
+      background: var(--cream);
+      padding: clamp(20px, 3vw, 36px);
+      position: relative;
+    }
+    .date-zone::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 3px;
+      background: var(--pink);
+    }
+    .d-label {
+      font-size: clamp(0.58rem, 0.85vw, 0.7rem);
+      font-weight: 500;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--green-dark);
+      margin-bottom: 6px;
+    }
+    .d-num {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: clamp(4rem, 10vw, 9rem);
+      line-height: 0.85;
+      color: var(--black);
+    }
+    .d-month {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(1.4rem, 3.5vw, 3.2rem);
+      color: var(--green-dark);
+      margin-bottom: clamp(10px, 1.5vh, 18px);
+    }
+    .d-sep { width: 32px; height: 1px; background: #CDC4B8; margin: clamp(10px, 1.5vh, 18px) 0; }
+    .d-time {
+      font-size: clamp(0.7rem, 1.1vw, 0.9rem);
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      color: var(--black);
+      margin-bottom: 6px;
+    }
+    .d-place {
+      font-size: clamp(0.58rem, 0.85vw, 0.7rem);
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--soft);
+      line-height: 1.7;
+    }
+    .d-place a {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: var(--green);
+    }
+    .d-place a:hover { color: var(--green-dark); }
+
+    .map-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 10px;
+      padding: 7px 14px 6px;
+      background: transparent;
+      border: 1px solid var(--soft);
+      color: var(--soft);
+      text-decoration: none;
+      font-size: clamp(0.55rem, 0.82vw, 0.66rem);
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .map-btn:hover { border-color: var(--green-dark); color: var(--green-dark); }
+
+    /* ── FOOTER ── */
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      border-top: 1px solid #CDC4B8;
+      padding-top: clamp(16px, 2.5vh, 28px);
+    }
+
+    .rsvp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 32px 13px;
+      background: var(--pink-dark);
+      color: white;
+      text-decoration: none;
+      font-size: clamp(0.62rem, 1vw, 0.78rem);
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      transition: background 0.15s;
+    }
+    .rsvp-btn:hover { background: var(--black); }
+
+    .sign {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(1rem, 2vw, 1.6rem);
+      color: var(--soft);
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+  <div class="poster">
+
+    <!-- Header -->
+    <div class="header">
+      <span class="h-tag">Save the Date</span>
+      <div class="h-line"></div>
+      <div class="h-dot"></div>
+    </div>
+
+    <!-- Names -->
+    <div class="names">
+      <span class="name">Vicky</span>
+      <span class="amp-sep">&</span>
+      <span class="name second">Ani</span>
+    </div>
+
+    <p class="subtitle">cuatro años celebrando juntas · 2025</p>
+
+    <!-- Main -->
+    <div class="main-area">
+
+      <div class="poem-zone">
+        <p class="poem-pre">
+          Muchos años cumplidos,<br />
+          cuatro años celebrando juntas.<br />
+          Un año nuevo eligiéndote<br />
+          para festejarlo con nosotras.
+        </p>
+      </div>
+
+      <div class="date-zone">
+        <p class="d-label">Sábado</p>
+        <p class="d-num">28</p>
+        <p class="d-month">noviembre</p>
+        <div class="d-sep"></div>
+        <p class="d-time">12 · 19 hs</p>
+        <p class="d-place">
+          <a href="https://maps.google.com/?q=Av.+Dr.+Ricardo+Balb%C3%ADn+4750,+Buenos+Aires,+Argentina"
+             target="_blank" rel="noopener">Parque Sarmiento</a>
+        </p>
+        <a class="map-btn"
+           href="https://maps.google.com/?q=Av.+Dr.+Ricardo+Balb%C3%ADn+4750,+Buenos+Aires,+Argentina"
+           target="_blank" rel="noopener">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+            <path d="M5 1C3.34 1 2 2.34 2 4c0 2.5 3 5 3 5s3-2.5 3-5c0-1.66-1.34-3-3-3z" stroke="currentColor" stroke-width="1" fill="none"/>
+            <circle cx="5" cy="4" r="1.2" stroke="currentColor" stroke-width="1"/>
+          </svg>
+          Cómo llegar
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <a class="rsvp-btn"
+         href="https://calendar.google.com/calendar/u/0/share?slt=1Af3Yu2ivWx5ZEmJpGQChtka__uiODqOgvcprGzB8ubKIht4ZVJIcbkl8L6RuycV9scph_JNb3hOiS8igrX2YXNBMO9i02CwqYr_469jAdId0pUoDS8-qFqV4"
+         target="_blank" rel="noopener">
+        ✓ &nbsp;Confirmar asistencia
+      </a>
+      <p class="sign">Te esperamos — Vicky &amp; Ani</p>
+    </div>
+
+  </div>
+</body>
+</html>

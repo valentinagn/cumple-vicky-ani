@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Save the Date · Vicky & Ani</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:      #6DBF65;
+      --green-dark: #3D8A35;
+      --green-bg:   #D4EDCF;
+      --pink:       #F2919E;
+      --pink-dark:  #C45866;
+      --pink-bg:    #FADADD;
+      --off-white:  #F4F1EC;
+      --black:      #1A1714;
+      --soft:       #7A706B;
+    }
+
+    body {
+      background: var(--off-white);
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 8vw;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .poster {
+      width: 100%;
+      max-width: 900px;
+      animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── SAVE THE DATE badge ── */
+    .badge-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: clamp(16px, 3vh, 28px);
+    }
+    .badge {
+      display: inline-block;
+      background: var(--pink-bg);
+      border: 1.5px solid var(--pink);
+      color: var(--pink-dark);
+      font-size: clamp(0.6rem, 1vw, 0.8rem);
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      padding: 6px 18px 5px;
+      transform: rotate(-2deg);
+      white-space: nowrap;
+    }
+    .badge-line {
+      flex: 1;
+      height: 1px;
+      background: #D8D2CC;
+    }
+    .badge-stars {
+      font-size: clamp(0.65rem, 1vw, 0.85rem);
+      color: var(--green);
+      letter-spacing: 0.25em;
+      white-space: nowrap;
+    }
+
+    /* ── NAMES ── */
+    .names {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(5rem, 14vw, 12rem);
+      line-height: 0.86;
+      color: var(--black);
+      letter-spacing: 0.02em;
+      margin-bottom: clamp(16px, 2.5vh, 28px);
+    }
+    .names .row-2 {
+      display: flex;
+      align-items: baseline;
+      gap: 0.15em;
+    }
+    .names .amp {
+      color: var(--green);
+      font-size: 0.78em;
+    }
+    .names .name-2 {
+      color: var(--pink-dark);
+    }
+
+    /* ── RULE ── */
+    .rule {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: clamp(18px, 2.5vh, 30px);
+    }
+    .rule-line { flex: 1; height: 1.5px; background: var(--black); }
+    .rule-text {
+      font-size: clamp(0.6rem, 1vw, 0.8rem);
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--soft);
+      white-space: nowrap;
+    }
+
+    /* ── POEM ── */
+    .poem {
+      font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+      font-weight: 300;
+      line-height: 1.9;
+      color: var(--soft);
+      margin-bottom: clamp(24px, 3.5vh, 40px);
+      border-left: 3px solid var(--green-bg);
+      padding-left: clamp(14px, 2vw, 24px);
+    }
+
+    /* ── DIAGONAL DATE BAND ── */
+    .date-band-wrap {
+      position: relative;
+      margin: 0 -8vw;
+      margin-bottom: clamp(20px, 3vh, 36px);
+      overflow: hidden;
+    }
+    .date-band {
+      background: var(--green-bg);
+      padding: clamp(24px, 4vh, 44px) 8vw;
+      transform: skewY(-2deg);
+      transform-origin: left center;
+    }
+    .date-band-inner {
+      transform: skewY(2deg);
+      transform-origin: left center;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .date-label {
+      font-size: clamp(0.58rem, 1vw, 0.78rem);
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--green-dark);
+      margin-bottom: 4px;
+    }
+    .date-big {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(4rem, 13vw, 10rem);
+      line-height: 0.82;
+      color: var(--black);
+      letter-spacing: 0.01em;
+    }
+    .date-big .month {
+      color: var(--green-dark);
+    }
+    .date-right {
+      text-align: right;
+      padding-bottom: 6px;
+    }
+    .time-big {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(1.6rem, 4vw, 3.2rem);
+      color: var(--black);
+      letter-spacing: 0.05em;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .place {
+      font-size: clamp(0.6rem, 1vw, 0.8rem);
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--soft);
+      line-height: 1.7;
+    }
+    .place a {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: var(--green);
+    }
+    .place a:hover { color: var(--green-dark); }
+
+    .map-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: 10px;
+      padding: 8px 16px 7px;
+      background: var(--black);
+      color: var(--off-white);
+      text-decoration: none;
+      font-size: clamp(0.58rem, 0.9vw, 0.72rem);
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      transition: background 0.15s, color 0.15s;
+    }
+    .map-btn:hover {
+      background: var(--green-dark);
+      color: white;
+    }
+    .map-btn svg {
+      flex-shrink: 0;
+    }
+
+    /* ── RSVP ── */
+    .rsvp-wrap {
+      margin-bottom: clamp(20px, 3vh, 32px);
+    }
+    .rsvp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 32px 13px;
+      background: var(--pink);
+      color: white;
+      text-decoration: none;
+      font-size: clamp(0.65rem, 1.1vw, 0.82rem);
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      transition: background 0.15s;
+    }
+    .rsvp-btn:hover { background: var(--pink-dark); }
+
+    /* ── BOTTOM ── */
+    .bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .cta {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(1.4rem, 3.5vw, 2.8rem);
+      color: var(--pink-dark);
+      letter-spacing: 0.04em;
+    }
+    .cta .arrow {
+      color: var(--green);
+    }
+    .sign {
+      font-size: clamp(0.6rem, 1vw, 0.8rem);
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--soft);
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+  <div class="poster">
+
+    <!-- Badge -->
+    <div class="badge-row">
+      <div class="badge">Save the Date</div>
+      <div class="badge-line"></div>
+      <span class="badge-stars">★ ★ ★</span>
+    </div>
+
+    <!-- Names — same size -->
+    <div class="names">
+      <div>VICKY</div>
+      <div class="row-2">
+        <span class="amp">&</span><span class="name-2">ANI</span>
+      </div>
+    </div>
+
+    <!-- Rule -->
+    <div class="rule">
+      <div class="rule-line"></div>
+      <span class="rule-text">cuatro años celebrando juntas</span>
+      <div class="rule-line"></div>
+    </div>
+
+    <!-- Poem -->
+    <p class="poem">
+      Muchos años cumplidos,<br />
+      cuatro años celebrando juntas.<br />
+      Un año nuevo eligiéndote<br />
+      para festejarlo con nosotras.
+    </p>
+
+    <!-- Date band (skewed) — negative margin matches body padding 8vw -->
+    <div class="date-band-wrap">
+      <div class="date-band">
+        <div class="date-band-inner">
+          <div class="date-left">
+            <p class="date-label">Sábado</p>
+            <p class="date-big">28<br/><span class="month">NOV</span></p>
+          </div>
+          <div class="date-right">
+            <p class="time-big">12–19 HS</p>
+            <p class="place">
+              <a href="https://maps.google.com/?q=Av.+Dr.+Ricardo+Balb%C3%ADn+4750,+Buenos+Aires,+Argentina" target="_blank" rel="noopener">Parque<br/>Sarmiento</a>
+            </p>
+            <a class="map-btn"
+               href="https://maps.google.com/?q=Av.+Dr.+Ricardo+Balb%C3%ADn+4750,+Buenos+Aires,+Argentina"
+               target="_blank" rel="noopener">
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+                <path d="M5.5 1C3.57 1 2 2.57 2 4.5c0 2.7 3.5 5.5 3.5 5.5S9 7.2 9 4.5C9 2.57 7.43 1 5.5 1z" stroke="currentColor" stroke-width="1" fill="none"/>
+                <circle cx="5.5" cy="4.5" r="1.3" stroke="currentColor" stroke-width="1"/>
+              </svg>
+              Cómo llegar
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RSVP -->
+    <div class="rsvp-wrap">
+      <a class="rsvp-btn"
+         href="https://calendar.google.com/calendar/u/0/share?slt=1Af3Yu2ivWx5ZEmJpGQChtka__uiODqOgvcprGzB8ubKIht4ZVJIcbkl8L6RuycV9scph_JNb3hOiS8igrX2YXNBMO9i02CwqYr_469jAdId0pUoDS8-qFqV4"
+         target="_blank" rel="noopener">
+        ✓ Confirmar asistencia
+      </a>
+    </div>
+
+    <!-- Bottom -->
+    <div class="bottom">
+      <p class="cta">Reservate el día <span class="arrow">↗</span></p>
+      <p class="sign">Te esperamos<br/>Vicky &amp; Ani</p>
+    </div>
+
+  </div>
+</body>
+</html>

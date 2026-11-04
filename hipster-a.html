@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Save the Date · Vicky & Ani</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;1,9..144,300;1,9..144,700&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:      #6DBF65;
+      --green-dark: #3D8A35;
+      --green-bg:   #D4EDCF;
+      --pink:       #F2919E;
+      --pink-dark:  #C45866;
+      --pink-bg:    #FADADD;
+      --cream:      #F6F2EB;
+      --black:      #1A1714;
+      --soft:       #7A706B;
+    }
+
+    body {
+      background: var(--cream);
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 8vw;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .poster {
+      width: 100%;
+      max-width: 900px;
+      animation: rise 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── TOP ROW ── */
+    .top-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: clamp(28px, 4vh, 50px);
+      border-bottom: 1px solid #D5CFC8;
+      padding-bottom: clamp(14px, 2vh, 22px);
+    }
+    .top-label {
+      font-size: clamp(0.6rem, 1vw, 0.75rem);
+      font-weight: 500;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--soft);
+    }
+    .top-year {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(0.85rem, 1.4vw, 1.1rem);
+      color: var(--green-dark);
+    }
+
+    /* ── NAMES ── */
+    .names-wrap {
+      margin-bottom: clamp(20px, 3vh, 36px);
+    }
+    .names {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-weight: 700;
+      font-size: clamp(5rem, 14vw, 12rem);
+      line-height: 0.88;
+      color: var(--black);
+      letter-spacing: -0.01em;
+    }
+    .name-vicky { display: block; }
+    .name-row2  {
+      display: flex;
+      align-items: baseline;
+      gap: 0.1em;
+    }
+    .amp {
+      font-weight: 300;
+      font-style: italic;
+      color: var(--green-dark);
+      font-size: 0.75em;
+    }
+    .name-ani { color: var(--pink-dark); }
+
+    /* ── DIVIDER ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: clamp(20px, 3vh, 34px);
+    }
+    .div-line { flex: 1; height: 1px; background: #D5CFC8; }
+    .div-text {
+      font-size: clamp(0.6rem, 0.9vw, 0.72rem);
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--soft);
+      white-space: nowrap;
+    }
+
+    /* ── BODY ── */
+    .body-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(20px, 4vw, 60px);
+      margin-bottom: clamp(24px, 3.5vh, 48px);
+      align-items: start;
+    }
+
+    .poem {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(1rem, 1.8vw, 1.4rem);
+      line-height: 1.85;
+      color: var(--soft);
+    }
+
+    .date-col {
+      border-left: 2px solid var(--green-bg);
+      padding-left: clamp(16px, 2.5vw, 32px);
+    }
+    .date-label {
+      font-size: clamp(0.58rem, 0.9vw, 0.72rem);
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--green-dark);
+      margin-bottom: 4px;
+    }
+    .date-big {
+      font-family: 'Fraunces', serif;
+      font-weight: 700;
+      font-size: clamp(3.5rem, 9vw, 8rem);
+      line-height: 0.85;
+      color: var(--black);
+    }
+    .date-big .month {
+      font-style: italic;
+      font-weight: 300;
+      color: var(--green-dark);
+    }
+    .time-place {
+      margin-top: clamp(12px, 2vh, 20px);
+    }
+    .time-text {
+      font-family: 'Fraunces', serif;
+      font-weight: 700;
+      font-size: clamp(1.2rem, 2.5vw, 2rem);
+      color: var(--black);
+      margin-bottom: 6px;
+    }
+    .place-link {
+      font-size: clamp(0.6rem, 0.9vw, 0.75rem);
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--soft);
+      line-height: 1.8;
+    }
+    .place-link a {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: var(--green);
+    }
+    .place-link a:hover { color: var(--green-dark); }
+
+    .map-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 10px;
+      padding: 7px 14px 6px;
+      background: var(--black);
+      color: var(--cream);
+      text-decoration: none;
+      font-size: clamp(0.55rem, 0.85vw, 0.68rem);
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      transition: background 0.15s;
+    }
+    .map-btn:hover { background: var(--green-dark); color: white; }
+
+    /* ── FOOTER ── */
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      border-top: 1px solid #D5CFC8;
+      padding-top: clamp(14px, 2vh, 24px);
+    }
+    .rsvp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 28px 12px;
+      background: var(--pink);
+      color: white;
+      text-decoration: none;
+      font-size: clamp(0.62rem, 1vw, 0.78rem);
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      transition: background 0.15s;
+    }
+    .rsvp-btn:hover { background: var(--pink-dark); }
+
+    .sign {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(1rem, 2vw, 1.6rem);
+      color: var(--soft);
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+  <div class="poster">
+
+    <div class="top-row">
+      <span class="top-label">✦ Save the Date</span>
+      <span class="top-year">2025</span>
+    </div>
+
+    <div class="names-wrap">
+      <div class="names">
+        <span class="name-vicky">Vicky</span>
+        <div class="name-row2">
+          <span class="amp">&</span>
+          <span class="name-ani">Ani</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider">
+      <div class="div-line"></div>
+      <span class="div-text">cuatro años celebrando juntas</span>
+      <div class="div-line"></div>
+    </div>
+
+    <div class="body-grid">
+      <p class="poem">
+        Muchos años cumplidos,<br />
+        cuatro años celebrando juntas.<br />
+        Un año nuevo eligiéndote<br />
+        para festejarlo con nosotras.
+      </p>
+
+      <div class="date-col">
+        <p class="date-label">Sábado</p>
+        <p class="date-big">28<br/><span class="month">nov</span></p>
+        <div class="time-place">
+          <p class="time-text">12–19 hs</p>
+          <p class="place-link">
+            <a href="https://maps.google.com/?q=Av.+Dr.+Ricardo+Balb%C3%ADn+4750,+Buenos+Aires,+Argentina"
+               target="_blank" rel="noopener">Parque Sarmiento</a>
+          </p>
+          <a class="map-btn"
+             href="https://maps.google.com/?q=Av.+Dr.+Ricardo+Balb%C3%ADn+4750,+Buenos+Aires,+Argentina"
+             target="_blank" rel="noopener">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+              <path d="M5 1C3.34 1 2 2.34 2 4c0 2.5 3 5 3 5s3-2.5 3-5c0-1.66-1.34-3-3-3z" stroke="currentColor" stroke-width="1" fill="none"/>
+              <circle cx="5" cy="4" r="1.2" stroke="currentColor" stroke-width="1"/>
+            </svg>
+            Cómo llegar
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <a class="rsvp-btn"
+         href="https://calendar.google.com/calendar/u/0/share?slt=1Af3Yu2ivWx5ZEmJpGQChtka__uiODqOgvcprGzB8ubKIht4ZVJIcbkl8L6RuycV9scph_JNb3hOiS8igrX2YXNBMO9i02CwqYr_469jAdId0pUoDS8-qFqV4"
+         target="_blank" rel="noopener">
+        ✓ &nbsp;Confirmar asistencia
+      </a>
+      <p class="sign">Te esperamos — Vicky &amp; Ani</p>
+    </div>
+
+  </div>
+</body>
+</html>

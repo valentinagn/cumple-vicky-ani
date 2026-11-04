@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Save the Date · Vicky & Ani</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=DM+Sans:wght@300;400&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --pink:        #F2B8C2;
+      --pink-dark:   #D9848F;
+      --pink-light:  #FADEDF;
+      --green:       #9DC49A;
+      --green-dark:  #6A9E66;
+      --green-light: #C9E5C7;
+      --sand:        #FBF6EE;
+      --text:        #3E3530;
+      --text-soft:   #8A7B72;
+    }
+
+    body {
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      background-color: var(--sand);
+      background-image:
+        radial-gradient(ellipse 70% 50% at 10% 20%, #F2D9DC55 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 90% 80%, #C9E5C755 0%, transparent 60%);
+      font-family: 'DM Sans', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .page {
+      max-width: 440px;
+      width: 100%;
+      text-align: center;
+      position: relative;
+      animation: floatIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    @keyframes floatIn {
+      from { opacity: 0; transform: translateY(20px) rotate(-0.5deg); }
+      to   { opacity: 1; transform: translateY(0)    rotate(0deg); }
+    }
+
+    /* ── Blob background shape ── */
+    .blob {
+      position: absolute;
+      inset: -20px;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      padding: 20px 30px 30px;
+    }
+
+    /* ── Label ── */
+    .label {
+      display: inline-block;
+      font-family: 'Caveat', cursive;
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--pink-dark);
+      letter-spacing: 0.08em;
+      background: var(--pink-light);
+      border-radius: 40px;
+      padding: 4px 18px 2px;
+      margin-bottom: 26px;
+      transform: rotate(-1deg);
+    }
+
+    /* ── Sun ── */
+    .sun-wrap {
+      margin-bottom: 10px;
+    }
+
+    /* ── Names ── */
+    .names {
+      font-family: 'Caveat', cursive;
+      font-size: clamp(3.4rem, 12vw, 4.4rem);
+      font-weight: 700;
+      color: var(--text);
+      line-height: 0.95;
+      letter-spacing: -0.01em;
+      margin-bottom: 6px;
+    }
+    .names .amp {
+      color: var(--green-dark);
+      font-weight: 400;
+      font-size: 0.8em;
+    }
+
+    .years-tag {
+      font-family: 'Caveat', cursive;
+      font-size: 1rem;
+      color: var(--green-dark);
+      letter-spacing: 0.05em;
+      margin-bottom: 28px;
+      opacity: 0.85;
+    }
+
+    /* ── Wavy divider ── */
+    .wave-rule {
+      margin: 0 auto 24px;
+      display: block;
+    }
+
+    /* ── Poem ── */
+    .poem {
+      font-family: 'Caveat', cursive;
+      font-size: clamp(1.2rem, 4.5vw, 1.45rem);
+      font-weight: 400;
+      color: var(--text-soft);
+      line-height: 1.75;
+      margin-bottom: 28px;
+    }
+
+    /* ── Date pill ── */
+    .date-pill {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      background: var(--green-light);
+      border-radius: 100px;
+      padding: 20px 44px 18px;
+      margin-bottom: 20px;
+      transform: rotate(0.6deg);
+    }
+
+    .cta {
+      font-family: 'Caveat', cursive;
+      font-size: 1.05rem;
+      color: var(--green-dark);
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+
+    .weekday {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      font-size: 0.68rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--green-dark);
+      margin-bottom: 2px;
+    }
+
+    .date-main {
+      font-family: 'Caveat', cursive;
+      font-size: clamp(2.2rem, 8vw, 3rem);
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1;
+    }
+
+    /* ── Details ── */
+    .details {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+      margin-bottom: 28px;
+    }
+    .dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--pink);
+      flex-shrink: 0;
+    }
+
+    /* ── Palms bottom ── */
+    .palms {
+      margin-bottom: 16px;
+    }
+
+    /* ── Sign ── */
+    .sign {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: var(--pink-dark);
+      transform: rotate(-0.5deg);
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- Organic blob background -->
+    <svg class="blob" viewBox="0 0 440 680" fill="none" preserveAspectRatio="none">
+      <path
+        d="M40 60 C20 80, 10 140, 15 220 C20 300, 0 350, 5 430 C10 510, 25 580, 60 620 C100 660, 340 670, 390 630 C430 600, 435 530, 430 440 C425 340, 445 290, 435 200 C425 110, 410 50, 370 30 C330 10, 80 20, 40 60Z"
+        fill="white"
+        opacity="0.7"
+      />
+    </svg>
+
+    <div class="content">
+
+      <p class="label">✦ save the date ✦</p>
+
+      <!-- Sun -->
+      <div class="sun-wrap">
+        <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+          <!-- rays -->
+          <line x1="40" y1="6"  x2="40" y2="14" stroke="#F2B8C2" stroke-width="2"   stroke-linecap="round"/>
+          <line x1="40" y1="66" x2="40" y2="74" stroke="#F2B8C2" stroke-width="2"   stroke-linecap="round"/>
+          <line x1="6"  y1="40" x2="14" y2="40" stroke="#F2B8C2" stroke-width="2"   stroke-linecap="round"/>
+          <line x1="66" y1="40" x2="74" y2="40" stroke="#F2B8C2" stroke-width="2"   stroke-linecap="round"/>
+          <line x1="14" y1="14" x2="20" y2="20" stroke="#9DC49A" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="60" y1="60" x2="66" y2="66" stroke="#9DC49A" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="14" y1="66" x2="20" y2="60" stroke="#9DC49A" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="60" y1="20" x2="66" y2="14" stroke="#9DC49A" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- circle -->
+          <circle cx="40" cy="40" r="18" fill="#FADEDF"/>
+          <circle cx="40" cy="40" r="13" fill="#F2B8C2" opacity="0.8"/>
+          <!-- face smile -->
+          <path d="M34 39 Q40 44 46 39" stroke="#D9848F" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+          <circle cx="36" cy="37" r="1.2" fill="#D9848F"/>
+          <circle cx="44" cy="37" r="1.2" fill="#D9848F"/>
+        </svg>
+      </div>
+
+      <h1 class="names">Vicky <span class="amp">&</span> Ani</h1>
+      <p class="years-tag">cuatro años festejando juntas</p>
+
+      <!-- Wavy divider -->
+      <svg class="wave-rule" width="180" height="16" viewBox="0 0 180 16" fill="none">
+        <path d="M0 8 C15 2, 30 14, 45 8 C60 2, 75 14, 90 8 C105 2, 120 14, 135 8 C150 2, 165 14, 180 8"
+          stroke="#9DC49A" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+      </svg>
+
+      <p class="poem">
+        Muchos años cumplidos,<br />
+        cuatro años celebrando juntas.<br />
+        Un año nuevo eligiéndote<br />
+        para festejarlo con nosotras.
+      </p>
+
+      <!-- Wavy divider 2 -->
+      <svg class="wave-rule" width="140" height="14" viewBox="0 0 140 14" fill="none">
+        <path d="M0 7 C12 2, 23 12, 35 7 C47 2, 58 12, 70 7 C82 2, 93 12, 105 7 C117 2, 128 12, 140 7"
+          stroke="#F2B8C2" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+      </svg>
+
+      <!-- Date pill -->
+      <div style="margin-bottom:20px">
+        <div class="date-pill">
+          <p class="cta">reservate el día ↓</p>
+          <p class="weekday">Sábado</p>
+          <p class="date-main">28 de noviembre</p>
+        </div>
+      </div>
+
+      <div class="details">
+        <span>12 · 19 hs</span>
+        <div class="dot"></div>
+        <span>Parque Sarmiento</span>
+      </div>
+
+      <!-- Palm leaves -->
+      <div class="palms">
+        <svg width="200" height="60" viewBox="0 0 200 60" fill="none">
+          <!-- left palm -->
+          <path d="M60 58 C55 45, 45 35, 30 25" stroke="#6A9E66" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M55 50 C42 42, 28 38, 14 30" stroke="#9DC49A" stroke-width="1"   stroke-linecap="round"/>
+          <path d="M58 54 C48 38, 38 28, 35 12" stroke="#9DC49A" stroke-width="1"   stroke-linecap="round"/>
+          <!-- left leaf blobs -->
+          <ellipse cx="22" cy="28" rx="12" ry="5" transform="rotate(-30 22 28)" fill="#C9E5C7"/>
+          <ellipse cx="37" cy="15" rx="10" ry="4" transform="rotate(-55 37 15)" fill="#9DC49A" opacity="0.7"/>
+          <ellipse cx="16" cy="32" rx="9"  ry="4" transform="rotate(-10 16 32)" fill="#C9E5C7" opacity="0.8"/>
+
+          <!-- right palm (mirror) -->
+          <path d="M140 58 C145 45, 155 35, 170 25" stroke="#6A9E66" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M145 50 C158 42, 172 38, 186 30" stroke="#9DC49A" stroke-width="1"   stroke-linecap="round"/>
+          <path d="M142 54 C152 38, 162 28, 165 12" stroke="#9DC49A" stroke-width="1"   stroke-linecap="round"/>
+          <!-- right leaf blobs -->
+          <ellipse cx="178" cy="28" rx="12" ry="5" transform="rotate(30 178 28)" fill="#C9E5C7"/>
+          <ellipse cx="163" cy="15" rx="10" ry="4" transform="rotate(55 163 15)" fill="#9DC49A" opacity="0.7"/>
+          <ellipse cx="184" cy="32" rx="9"  ry="4" transform="rotate(10 184 32)" fill="#C9E5C7" opacity="0.8"/>
+
+          <!-- small pink flowers center -->
+          <circle cx="100" cy="50" r="5"   fill="#FADEDF"/>
+          <circle cx="100" cy="50" r="3"   fill="#F2B8C2"/>
+          <circle cx="92"  cy="44" r="3.5" fill="#F2B8C2" opacity="0.6"/>
+          <circle cx="108" cy="44" r="3.5" fill="#F2B8C2" opacity="0.6"/>
+          <circle cx="100" cy="40" r="2.5" fill="#D9848F" opacity="0.4"/>
+        </svg>
+      </div>
+
+      <p class="sign">te esperamos 🌿 Vicky &amp; Ani</p>
+
+    </div>
+  </div>
+</body>
+</html>
