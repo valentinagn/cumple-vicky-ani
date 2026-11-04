@@ -106,12 +106,10 @@
       margin-bottom: clamp(18px, 2.5vh, 30px);
     }
     .rule-line { flex: 1; height: 1.5px; background: var(--black); }
-    .rule-text {
-      font-size: clamp(0.6rem, 1vw, 0.8rem);
-      font-weight: 500;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--soft);
+    .rule-stars {
+      font-size: 0.6rem;
+      color: var(--pink);
+      letter-spacing: 0.3em;
       white-space: nowrap;
     }
 
@@ -124,6 +122,7 @@
       margin-bottom: clamp(24px, 3.5vh, 40px);
       border-left: 3px solid var(--green-bg);
       padding-left: clamp(14px, 2vw, 24px);
+      text-align: justify;
     }
 
     /* ── DIAGONAL DATE BAND ── */
@@ -142,40 +141,29 @@
     .date-band-inner {
       transform: skewY(2deg);
       transform-origin: left center;
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 20px;
     }
-    .date-label {
-      font-size: clamp(0.58rem, 1vw, 0.78rem);
-      font-weight: 500;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--green-dark);
-      margin-bottom: 4px;
-    }
-    .date-big {
+    .date-weekday {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(4rem, 13vw, 10rem);
-      line-height: 0.82;
+      font-size: clamp(2rem, 5vw, 4rem);
+      color: var(--green-dark);
+      letter-spacing: 0.06em;
+      line-height: 1;
+      margin-bottom: 2px;
+    }
+    .date-full {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3.5rem, 11vw, 9rem);
+      line-height: 0.85;
       color: var(--black);
       letter-spacing: 0.01em;
-    }
-    .date-big .month {
-      color: var(--green-dark);
-    }
-    .date-right {
-      text-align: right;
-      padding-bottom: 6px;
+      margin-bottom: clamp(8px, 1.5vh, 18px);
     }
     .time-big {
       font-family: 'Bebas Neue', sans-serif;
       font-size: clamp(1.6rem, 4vw, 3.2rem);
-      color: var(--black);
+      color: var(--green-dark);
       letter-spacing: 0.05em;
       line-height: 1;
-      margin-bottom: 8px;
     }
     .place {
       font-size: clamp(0.6rem, 1vw, 0.8rem);
@@ -283,30 +271,23 @@
     <!-- Rule -->
     <div class="rule">
       <div class="rule-line"></div>
-      <span class="rule-text">cuatro años celebrando juntas</span>
+      <span class="rule-stars">★ ★ ★</span>
       <div class="rule-line"></div>
     </div>
 
     <!-- Poem -->
     <p class="poem">
-      Muchos años cumplidos,<br />
-      cuatro años celebrando juntas.<br />
-      Un año nuevo eligiéndote<br />
-      para festejarlo con nosotras.
+      Muchos años cumplidos, cuatro años celebrando juntas. Un año nuevo eligiéndote para festejarlo con nosotras.
     </p>
 
     <!-- Date band (skewed) — negative margin matches body padding 8vw -->
     <div class="date-band-wrap">
       <div class="date-band">
         <div class="date-band-inner">
-          <div class="date-left">
-            <p class="date-label">Sábado</p>
-            <p class="date-big">28<br/><span class="month">NOV</span></p>
+            <p class="date-weekday">Sábado</p>
+            <p class="date-full">28 de noviembre</p>
+            <p class="time-big">12–19 hs</p>
           </div>
-          <div class="date-right">
-            <p class="time-big">12–19 HS</p>
-          </div>
-        </div>
       </div>
     </div>
 
