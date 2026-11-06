@@ -18,7 +18,7 @@
       --pink:       #F2919E;
       --pink-dark:  #C45866;
       --pink-bg:    #FADADD;
-      --off-white:  #F4F1EC;
+      --off-white:  #EDE7D9;
       --black:      #1A1714;
       --soft:       #7A706B;
     }
@@ -42,6 +42,26 @@
     @keyframes rise {
       from { opacity: 0; transform: translateY(18px); }
       to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── PHOTO ── */
+    .photo-wrap {
+      margin-bottom: clamp(16px, 2.5vh, 28px);
+    }
+    .photo-circle {
+      width: clamp(100px, 14vw, 180px);
+      height: clamp(100px, 14vw, 180px);
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid var(--pink);
+      outline: 3px solid var(--green-bg);
+      outline-offset: 3px;
+    }
+    .photo-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 15%;
     }
 
     /* ── SAVE THE DATE badge ── */
@@ -252,6 +272,13 @@
 </head>
 <body>
   <div class="poster">
+
+    <!-- Foto circular -->
+    <div class="photo-wrap">
+      <div class="photo-circle">
+        <img src="foto.jpg" alt="Vicky y Ani" />
+      </div>
+    </div>
 
     <!-- Badge -->
     <div class="badge-row">
