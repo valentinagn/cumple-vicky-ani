@@ -48,21 +48,20 @@
     /* ── PHOTO ── */
     .names-photo-row {
       display: flex;
-      align-items: stretch;
+      align-items: center;
       justify-content: space-between;
       gap: clamp(16px, 3vw, 40px);
       margin-bottom: clamp(16px, 2.5vh, 28px);
     }
     .photo-circle {
-      aspect-ratio: 1 / 1;
+      width: clamp(160px, 22vw, 280px);
+      height: clamp(160px, 22vw, 280px);
       border-radius: 50%;
       overflow: hidden;
       flex-shrink: 0;
       border: 3px solid var(--pink);
       outline: 3px solid var(--green-bg);
       outline-offset: 3px;
-      min-width: 130px;
-      max-width: 280px;
     }
     .photo-circle img {
       width: 100%;
