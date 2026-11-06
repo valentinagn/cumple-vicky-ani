@@ -45,14 +45,18 @@
     }
 
     /* ── PHOTO ── */
-    .photo-wrap {
+    .names-photo-row {
+      display: flex;
+      align-items: center;
+      gap: clamp(16px, 3vw, 40px);
       margin-bottom: clamp(16px, 2.5vh, 28px);
     }
     .photo-circle {
-      width: clamp(100px, 14vw, 180px);
-      height: clamp(100px, 14vw, 180px);
+      width: clamp(130px, 18vw, 240px);
+      height: clamp(130px, 18vw, 240px);
       border-radius: 50%;
       overflow: hidden;
+      flex-shrink: 0;
       border: 3px solid var(--pink);
       outline: 3px solid var(--green-bg);
       outline-offset: 3px;
@@ -273,10 +277,16 @@
 <body>
   <div class="poster">
 
-    <!-- Foto circular -->
-    <div class="photo-wrap">
+    <!-- Foto + nombres en fila -->
+    <div class="names-photo-row">
       <div class="photo-circle">
         <img src="foto.jpg" alt="Vicky y Ani" />
+      </div>
+      <div class="names">
+        <div class="name-vicky">VICKY</div>
+        <div class="row-2">
+          <span class="amp">&</span><span class="name-ani">ANI</span>
+        </div>
       </div>
     </div>
 
@@ -285,14 +295,6 @@
       <div class="badge">Save the Date</div>
       <div class="badge-line"></div>
       <span class="badge-stars">★ ★ ★</span>
-    </div>
-
-    <!-- Names — dos líneas, Vicky rosa, Ani verde -->
-    <div class="names">
-      <div class="name-vicky">VICKY</div>
-      <div class="row-2">
-        <span class="amp">&</span><span class="name-ani">ANI</span>
-      </div>
     </div>
 
     <!-- Rule -->
