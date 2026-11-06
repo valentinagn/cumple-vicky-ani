@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Save the Date · Vicky & Ani</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎂</text></svg>">
   <link
     href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500&display=swap"
     rel="stylesheet"
@@ -48,6 +49,7 @@
     .names-photo-row {
       display: flex;
       align-items: center;
+      justify-content: space-between;
       gap: clamp(16px, 3vw, 40px);
       margin-bottom: clamp(16px, 2.5vh, 28px);
     }
@@ -277,24 +279,24 @@
 <body>
   <div class="poster">
 
-    <!-- Foto + nombres en fila -->
+    <!-- Badge -->
+    <div class="badge-row">
+      <div class="badge">Save the Date</div>
+      <div class="badge-line"></div>
+      <span class="badge-stars">★ ★ ★</span>
+    </div>
+
+    <!-- Nombres izquierda, foto derecha -->
     <div class="names-photo-row">
-      <div class="photo-circle">
-        <img src="foto.jpg" alt="Vicky y Ani" />
-      </div>
       <div class="names">
         <div class="name-vicky">VICKY</div>
         <div class="row-2">
           <span class="amp">&</span><span class="name-ani">ANI</span>
         </div>
       </div>
-    </div>
-
-    <!-- Badge -->
-    <div class="badge-row">
-      <div class="badge">Save the Date</div>
-      <div class="badge-line"></div>
-      <span class="badge-stars">★ ★ ★</span>
+      <div class="photo-circle">
+        <img src="foto.jpg" alt="Vicky y Ani" />
+      </div>
     </div>
 
     <!-- Rule -->
