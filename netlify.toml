@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/invitacion-oficial.html"
+  to = "/index.html"
+  status = 302
