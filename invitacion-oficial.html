@@ -321,24 +321,19 @@
     .fotos-heading span { color: var(--green-dark); }
     .fotos-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(16px, 3vw, 32px);
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(10px, 2vw, 20px);
+    }
+    @media (max-width: 600px) {
+      .fotos-grid { grid-template-columns: 1fr 1fr; }
     }
     .foto-item {}
     .foto-img {
       width: 100%;
-      aspect-ratio: 4 / 5;
+      aspect-ratio: 3 / 4;
       object-fit: cover;
-      object-position: center 15%;
+      object-position: center 20%;
       display: block;
-    }
-    .foto-item:last-child .foto-img { object-position: center 20%; }
-    .foto-caption {
-      font-size: clamp(0.7rem, 1.1vw, 0.85rem);
-      font-weight: 300;
-      color: var(--soft);
-      padding: 10px 0 0;
-      font-style: italic;
     }
 
     /* ── SPOTIFY ── */
@@ -471,18 +466,6 @@
         </div>
       </div>
 
-      <div class="hero-date-row">
-        <div class="date-badge">
-          <p class="date-badge-label">Guardate el día</p>
-          <p class="date-badge-date">SÁB 28 NOV</p>
-        </div>
-        <div class="hero-btns">
-          <a class="btn-primary" href="#rsvp">✓ &nbsp;Confirmar asistencia</a>
-          <a class="btn-secondary"
-             href="https://maps.google.com/?q=Av.+Dr.+Ricardo+Balb%C3%ADn+4750,+Buenos+Aires,+Argentina"
-             target="_blank" rel="noopener">↗ &nbsp;Cómo llegar</a>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -577,12 +560,31 @@
       <h2 class="fotos-heading">Nuestros <span>cumples</span></h2>
       <div class="fotos-grid">
         <div class="foto-item">
+          <img class="foto-img" src="foto3.jpg" alt="Vicky y Ani" />
+        </div>
+        <div class="foto-item">
           <img class="foto-img" src="foto.jpg" alt="Vicky y Ani" />
-          <p class="foto-caption">Un año más juntas 🎂</p>
+        </div>
+        <div class="foto-item">
+          <img class="foto-img" src="foto4.jpg" alt="Vicky y Ani" />
+        </div>
+        <div class="foto-item">
+          <img class="foto-img" src="foto6.jpg" alt="Vicky y Ani" />
+        </div>
+        <div class="foto-item">
+          <img class="foto-img" src="foto7.jpg" alt="Vicky y Ani" />
+        </div>
+        <div class="foto-item">
+          <img class="foto-img" src="foto5.jpg" alt="Vicky y Ani" />
+        </div>
+        <div class="foto-item">
+          <img class="foto-img" src="foto8.jpg" alt="Vicky y Ani" />
         </div>
         <div class="foto-item">
           <img class="foto-img" src="foto2.jpg" alt="Vicky y Ani" />
-          <p class="foto-caption">¡El que viene va a ser mejor! 🎈</p>
+        </div>
+        <div class="foto-item">
+          <img class="foto-img" src="foto9.jpg" alt="Vicky y Ani" />
         </div>
       </div>
     </div>
