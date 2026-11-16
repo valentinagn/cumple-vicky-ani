@@ -53,7 +53,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: var(--black);
+      background: var(--green-dark);
       padding: 10px 8vw;
       display: flex;
       align-items: center;
@@ -203,9 +203,8 @@
     }
     .btn-secondary:hover { background: var(--black); color: var(--cream); }
 
-    /* ── POEM BAND ── */
     #poema {
-      background: var(--black);
+      background: var(--green-bg);
       padding: clamp(36px, 6vh, 64px) 0;
     }
     .poem-inner {
@@ -218,17 +217,17 @@
       font-size: clamp(1rem, 1.8vw, 1.3rem);
       font-weight: 300;
       line-height: 1.9;
-      color: #B8AFA8;
-      border-left: 3px solid var(--green);
+      color: var(--soft);
+      border-left: 3px solid var(--green-dark);
       padding-left: clamp(16px, 2.5vw, 28px);
       text-align: justify;
     }
-    .poem-text em { color: var(--pink); font-style: normal; }
+    .poem-text em { color: var(--pink-dark); font-style: normal; }
     .photo-poem {
       width: clamp(130px, 17vw, 220px);
       height: clamp(130px, 17vw, 220px);
       border-color: var(--green);
-      outline-color: #333;
+      outline-color: var(--green-dark);
     }
     .photo-poem img { object-position: center 20%; }
 
@@ -287,14 +286,13 @@
     .detail-block.accent { background: var(--green-bg); }
     .detail-block.accent2 { background: var(--pink-bg); }
 
-    /* ── LOCATION MAP BUTTON ── */
     .map-btn-full {
       display: inline-flex;
       align-items: center;
       gap: 6px;
       margin-top: 10px;
       padding: 7px 14px 6px;
-      background: var(--black);
+      background: var(--green-dark);
       color: var(--cream);
       text-decoration: none;
       font-size: 0.58rem;
@@ -303,7 +301,7 @@
       text-transform: uppercase;
       transition: background 0.15s;
     }
-    .map-btn-full:hover { background: var(--green-dark); color: white; }
+    .map-btn-full:hover { background: var(--black); color: white; }
 
     /* ── FOTOS ── */
     #fotos {
@@ -336,20 +334,19 @@
       display: block;
     }
 
-    /* ── SPOTIFY ── */
     #musica {
-      background: var(--black);
+      background: var(--pink-bg);
       padding: clamp(48px, 8vh, 80px) 0;
     }
     .spotify-heading {
       font-family: 'Bebas Neue', sans-serif;
       font-size: clamp(2.5rem, 6vw, 5rem);
-      color: var(--cream);
+      color: var(--black);
       letter-spacing: 0.02em;
       margin-bottom: 4px;
       line-height: 1;
     }
-    .spotify-heading span { color: var(--green); }
+    .spotify-heading span { color: var(--green-dark); }
     .spotify-sub {
       font-size: clamp(0.75rem, 1.2vw, 0.95rem);
       font-weight: 300;
@@ -410,7 +407,7 @@
 
     /* ── FOOTER ── */
     footer {
-      background: var(--black);
+      background: var(--green-dark);
       padding: 24px 8vw;
       display: flex;
       align-items: center;
@@ -452,7 +449,6 @@
     <div class="wrap">
       <div class="hero-inner">
         <div class="hero-text">
-          <p class="hero-pre">✦ La invitación ✦</p>
           <p class="hero-title">¡Te invitamos a nuestro cumple!</p>
           <div class="names">
             <span class="name-vicky">VICKY</span>
@@ -473,15 +469,15 @@
   <section id="poema">
     <div class="wrap">
       <div class="poem-inner">
+        <div class="photo-circle photo-poem">
+          <img src="foto2.jpg" alt="Vicky y Ani" />
+        </div>
         <p class="poem-text">
           Muchos años cumplidos,<br />
           cuatro años celebrando juntas.<br />
           Un año nuevo <em>eligiéndote</em><br />
           para festejarlo con nosotras.
         </p>
-        <div class="photo-circle photo-poem">
-          <img src="foto2.jpg" alt="Vicky y Ani" />
-        </div>
       </div>
     </div>
   </section>
@@ -521,7 +517,7 @@
         <div class="detail-block">
           <span class="detail-icon">🍹</span>
           <p class="detail-title">Qué tomar</p>
-          <p class="detail-body">La bebida que quieras tomar</p>
+          <p class="detail-body">Trae lo que quieras tomar ese día</p>
         </div>
 
         <div class="detail-block accent2">
@@ -531,6 +527,7 @@
             Snacks<br/>
             Mantita o reposera<br/>
             Protector solar<br/>
+            Conservadora para hielo<br/>
             <em style="color:var(--pink-dark)">Todo para disfrutar un día al aire libre ✦</em>
           </p>
         </div>
@@ -630,7 +627,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <span class="footer-brand">VICKY & ANI · 2025</span>
+    <span class="footer-brand">VICKY & ANI · 2026</span>
     <span class="footer-note">Sáb 28 nov · Parque Sarmiento · 12–19 hs</span>
   </footer>
 
