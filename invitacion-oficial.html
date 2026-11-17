@@ -139,7 +139,9 @@
     }
     .photo-hero img { object-position: center 15%; }
 
-    .hero-date-row {
+    .hero-confirm {
+      margin-top: clamp(20px, 3vh, 32px);
+    }
       display: flex;
       align-items: center;
       gap: clamp(14px, 2vw, 28px);
@@ -220,7 +222,7 @@
       color: var(--soft);
       border-left: 3px solid var(--green-dark);
       padding-left: clamp(16px, 2.5vw, 28px);
-      text-align: justify;
+      text-align: center;
     }
     .poem-text em { color: var(--pink-dark); font-style: normal; }
     .photo-poem {
@@ -319,16 +321,13 @@
     .fotos-heading span { color: var(--green-dark); }
     .fotos-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: clamp(10px, 2vw, 20px);
-    }
-    @media (max-width: 600px) {
-      .fotos-grid { grid-template-columns: 1fr 1fr; }
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(12px, 2vw, 24px);
     }
     .foto-item {}
     .foto-img {
       width: 100%;
-      aspect-ratio: 3 / 4;
+      aspect-ratio: 4 / 5;
       object-fit: cover;
       object-position: center 20%;
       display: block;
@@ -449,7 +448,6 @@
     <div class="wrap">
       <div class="hero-inner">
         <div class="hero-text">
-          <p class="hero-title">¡Te invitamos a nuestro cumple!</p>
           <div class="names">
             <span class="name-vicky">VICKY</span>
             <div class="row-2">
@@ -460,6 +458,10 @@
         <div class="photo-circle photo-hero">
           <img src="foto.jpg" alt="Vicky y Ani" />
         </div>
+      </div>
+
+      <div class="hero-confirm">
+        <a class="btn-primary" href="#rsvp">✓ &nbsp;Confirmar asistencia</a>
       </div>
 
     </div>
@@ -514,7 +516,7 @@
           </a>
         </div>
 
-        <div class="detail-block accent2 full-width">
+        <div class="detail-block accent2">
           <span class="detail-icon">🏖️</span>
           <p class="detail-title">Qué traer</p>
           <p class="detail-body">
@@ -524,6 +526,17 @@
             Protector solar<br/>
             Conservadora para hielo<br/>
             <em style="color:var(--pink-dark)">Todo para disfrutar un día al aire libre ✦</em>
+          </p>
+        </div>
+
+        <div class="detail-block accent">
+          <span class="detail-icon">❗</span>
+          <p class="detail-title">Importante</p>
+          <p class="detail-body">
+            Entrada general · $2.500<br/>
+            Entrada con pileta · $5.500<br/>
+            Estacionamiento · $3.500<br/>
+            <em style="color:var(--pink-dark);font-style:normal;font-weight:500;display:block;margin-top:8px">TRAER EFECTIVO</em>
           </p>
         </div>
 
@@ -555,10 +568,10 @@
           <img class="foto-img" src="foto3.jpg" alt="Vicky y Ani" />
         </div>
         <div class="foto-item">
-          <img class="foto-img" src="foto.jpg" alt="Vicky y Ani" />
+          <img class="foto-img" src="foto4.jpg" alt="Vicky y Ani" />
         </div>
         <div class="foto-item">
-          <img class="foto-img" src="foto4.jpg" alt="Vicky y Ani" />
+          <img class="foto-img" src="foto5.jpg" alt="Vicky y Ani" />
         </div>
         <div class="foto-item">
           <img class="foto-img" src="foto6.jpg" alt="Vicky y Ani" />
@@ -567,16 +580,7 @@
           <img class="foto-img" src="foto7.jpg" alt="Vicky y Ani" />
         </div>
         <div class="foto-item">
-          <img class="foto-img" src="foto5.jpg" alt="Vicky y Ani" />
-        </div>
-        <div class="foto-item">
-          <img class="foto-img" src="foto8.jpg" alt="Vicky y Ani" />
-        </div>
-        <div class="foto-item">
-          <img class="foto-img" src="foto2.jpg" alt="Vicky y Ani" />
-        </div>
-        <div class="foto-item">
-          <img class="foto-img" src="foto9.jpg" alt="Vicky y Ani" />
+          <img class="foto-img" src="foto10.jpg" alt="Vicky y Ani" />
         </div>
       </div>
     </div>
@@ -626,5 +630,36 @@
     <span class="footer-note">Sáb 28 nov · Parque Sarmiento · 12–19 hs</span>
   </footer>
 
+  <script>
+    (function() {
+      var colors = ['#F2919E','#6DBF65','#C45866','#3D8A35','#FADADD','#D4EDCF','#EDE7D9'];
+      var style = document.createElement('style');
+      style.textContent = '.cfp{position:fixed;top:-14px;pointer-events:none;z-index:9999;animation:cffall linear forwards}@keyframes cffall{0%{transform:translateY(0) rotate(0deg);opacity:1}85%{opacity:1}100%{transform:translateY(105vh) rotate(600deg);opacity:0}}';
+      document.head.appendChild(style);
+      function launch() {
+        for (var i = 0; i < 100; i++) {
+          (function(i) {
+            var el = document.createElement('div');
+            var size = Math.random() * 8 + 5;
+            el.className = 'cfp';
+            el.style.left = (Math.random() * 100) + 'vw';
+            el.style.width = size + 'px';
+            el.style.height = (Math.random() > 0.5 ? size : size * 0.45) + 'px';
+            el.style.background = colors[Math.floor(Math.random() * colors.length)];
+            el.style.borderRadius = Math.random() > 0.55 ? '50%' : '2px';
+            el.style.animationDuration = (Math.random() * 3 + 2.5) + 's';
+            el.style.animationDelay = (Math.random() * 2.8) + 's';
+            document.body.appendChild(el);
+            setTimeout(function(){ el.remove(); }, 7000);
+          })(i);
+        }
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', launch);
+      } else {
+        launch();
+      }
+    })();
+  </script>
 </body>
 </html>
