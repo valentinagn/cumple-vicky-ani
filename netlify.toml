@@ -1,4 +1,4 @@
 [[redirects]]
-  from = "/invitacion-oficial.html"
-  to = "/index.html"
+  from = "/"
+  to = "/invitacion-oficial.html"
   status = 302
